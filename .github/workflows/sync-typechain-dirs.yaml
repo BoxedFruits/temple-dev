@@ -21,10 +21,9 @@ jobs:
           node-version: '16'
           cache: 'yarn'
       - run: |
-          sudo apt-get update
-          sudo apt-get install -y rsync
           yarn install
           yarn compile
           ls ../apps/dapp/src/types/
+          echo '----- Running Rsync -----'
           rsync -avzh typechain ../apps/dapp/src/types/
         working-directory: protocol
