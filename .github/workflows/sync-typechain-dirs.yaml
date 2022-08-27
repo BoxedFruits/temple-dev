@@ -26,11 +26,11 @@ jobs:
           ls ../apps/dapp/src/types/
           echo '----- Running Rsync -----'
           rsync -avzh typechain ../apps/dapp/src/types/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add ../apps/dapp/src/types/
-          git commit -m "Update Dapp Typechain Types"
+          git commit -m "Automated Action: Update Dapp Typechain Types"
           git status
           echo '---- Trying to push ----'
-          git push stage
+          git push
         working-directory: protocol
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
