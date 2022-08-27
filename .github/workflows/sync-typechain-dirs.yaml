@@ -26,4 +26,9 @@ jobs:
           ls ../apps/dapp/src/types/
           echo '----- Running Rsync -----'
           rsync -avzh typechain ../apps/dapp/src/types/
+          git add ../apps/dapp/src/types/
+          git commit -m "Update Dapp Typechain Types"
+          git status
+          echo '---- Trying to push ----'
+          git push stage
         working-directory: protocol
