@@ -28,7 +28,7 @@ contract TempleERC20Token is ERC20, ERC20Burnable, Ownable, AccessControl {
         revokeRole(CAN_MINT, account);
     }
 
-    function myFunction(address poop) public {
+    function myFunction(address poop) public onlyOwner {
         poop;
     }
 }
