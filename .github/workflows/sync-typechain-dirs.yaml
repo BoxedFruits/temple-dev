@@ -32,3 +32,5 @@ jobs:
           echo '---- Trying to push ----'
           git push stage
         working-directory: protocol
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
