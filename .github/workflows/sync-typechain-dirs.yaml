@@ -21,6 +21,8 @@ jobs:
           node-version: '16'
           cache: 'yarn'
       - run: |
+          echo ${{ github }}
+          echo ${{ github.event_name }}
           yarn install
           yarn compile
           ls ../apps/dapp/src/types/
