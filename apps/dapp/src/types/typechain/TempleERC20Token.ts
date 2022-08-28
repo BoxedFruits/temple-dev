@@ -24,6 +24,8 @@ export interface TempleERC20TokenInterface extends utils.Interface {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "addMinter(address)": FunctionFragment;
     "addingAFunction()": FunctionFragment;
+    "addingAFunction2()": FunctionFragment;
+    "addingAFunctionTres()": FunctionFragment;
     "allowance(address,address)": FunctionFragment;
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
@@ -58,6 +60,14 @@ export interface TempleERC20TokenInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "addMinter", values: [string]): string;
   encodeFunctionData(
     functionFragment: "addingAFunction",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addingAFunction2",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addingAFunctionTres",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -147,6 +157,14 @@ export interface TempleERC20TokenInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "addMinter", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "addingAFunction",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "addingAFunction2",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "addingAFunctionTres",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
@@ -306,6 +324,14 @@ export interface TempleERC20Token extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    addingAFunction2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    addingAFunctionTres(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     allowance(
       owner: string,
       spender: string,
@@ -431,6 +457,14 @@ export interface TempleERC20Token extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  addingAFunction2(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  addingAFunctionTres(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   allowance(
     owner: string,
     spender: string,
@@ -550,6 +584,10 @@ export interface TempleERC20Token extends BaseContract {
     addMinter(account: string, overrides?: CallOverrides): Promise<void>;
 
     addingAFunction(overrides?: CallOverrides): Promise<void>;
+
+    addingAFunction2(overrides?: CallOverrides): Promise<void>;
+
+    addingAFunctionTres(overrides?: CallOverrides): Promise<void>;
 
     allowance(
       owner: string,
@@ -735,6 +773,14 @@ export interface TempleERC20Token extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    addingAFunction2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    addingAFunctionTres(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     allowance(
       owner: string,
       spender: string,
@@ -863,6 +909,14 @@ export interface TempleERC20Token extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     addingAFunction(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    addingAFunction2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    addingAFunctionTres(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
