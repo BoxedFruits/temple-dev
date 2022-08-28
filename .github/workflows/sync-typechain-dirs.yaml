@@ -13,6 +13,7 @@ on:
 jobs:
   align_typechain_dir:
     name: Sync Typechain Directories
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -32,5 +33,6 @@ jobs:
           git commit -m "Automated Action: Update Dapp Typechain Types"
           git status
           echo '---- Trying to push ----'
+          echo ${{ github.event.pull_request.merged }}
           git push
         working-directory: protocol
