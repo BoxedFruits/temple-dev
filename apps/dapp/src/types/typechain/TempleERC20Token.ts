@@ -34,6 +34,7 @@ export interface TempleERC20TokenInterface extends utils.Interface {
     "grantRole(bytes32,address)": FunctionFragment;
     "hasRole(bytes32,address)": FunctionFragment;
     "increaseAllowance(address,uint256)": FunctionFragment;
+    "lastTestForreal()": FunctionFragment;
     "mint(address,uint256)": FunctionFragment;
     "name()": FunctionFragment;
     "owner()": FunctionFragment;
@@ -89,6 +90,10 @@ export interface TempleERC20TokenInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "increaseAllowance",
     values: [string, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "lastTestForreal",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "mint",
@@ -158,6 +163,10 @@ export interface TempleERC20TokenInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "hasRole", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "increaseAllowance",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "lastTestForreal",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
@@ -346,6 +355,10 @@ export interface TempleERC20Token extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    lastTestForreal(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     mint(
       to: string,
       amount: BigNumberish,
@@ -467,6 +480,10 @@ export interface TempleERC20Token extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  lastTestForreal(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   mint(
     to: string,
     amount: BigNumberish,
@@ -581,6 +598,8 @@ export interface TempleERC20Token extends BaseContract {
       addedValue: BigNumberish,
       overrides?: CallOverrides
     ): Promise<boolean>;
+
+    lastTestForreal(overrides?: CallOverrides): Promise<void>;
 
     mint(
       to: string,
@@ -768,6 +787,10 @@ export interface TempleERC20Token extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    lastTestForreal(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     mint(
       to: string,
       amount: BigNumberish,
@@ -895,6 +918,10 @@ export interface TempleERC20Token extends BaseContract {
     increaseAllowance(
       spender: string,
       addedValue: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    lastTestForreal(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
