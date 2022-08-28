@@ -33,5 +33,6 @@ jobs:
           git commit -m "Automated Action: Update Dapp Typechain Types"
           git status
           echo '---- Trying to push ----'
+          echo ${{ github.event.pull_request.merged }}
           git push
         working-directory: protocol
